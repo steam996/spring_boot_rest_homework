@@ -12,11 +12,11 @@ import ru.netology.spring_boot_rest_homework.exception.UnauthorizedUser;
 public class ExceptionHandlerAdvice {
     @ExceptionHandler(InvalidCredentials.class)
     public ResponseEntity<String> icHandler(InvalidCredentials e) {
-        return new ResponseEntity<>("InvalidCredentials", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(UnauthorizedUser.class)
     public ResponseEntity<String> uuHandler(UnauthorizedUser e) {
-        return new ResponseEntity<>("UnauthorizedUser", HttpStatus.UNAUTHORIZED);
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
     }
 }
