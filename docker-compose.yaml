@@ -1,0 +1,8 @@
+version: '3'
+services:
+     app1:
+        image: 'myapp'
+        ports:
+         - '8081:8080'
+
+
